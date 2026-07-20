@@ -83,6 +83,11 @@ public class WebArchiveBuilder {
         return this;
     }
 
+    public WebArchiveBuilder addResource(File file, String targetPath) {
+        archive.addAsResource(new FileAsset(file), targetPath);
+        return this;
+    }
+
     public WebArchiveBuilder addService(final Class<?> serviceInterface, final Class<?>... serviceImpls) {
         archive.addAsServiceProviderAndClasses(serviceInterface, serviceImpls);
         return this;
