@@ -48,7 +48,10 @@ import java.util.ResourceBundle;
  */
 public class DefaultMessageResolver extends AbstractMessageResolver {
 
-    private static final String DEFAULT_BASENAME = "messages";
+    /**
+     * Default basename for resource bundle message files (e.g., messages.properties, messages_ja.properties).
+     */
+    public static final String DEFAULT_BASENAME = "messages";
     private static final Object[] EMPTY_MESSAGE_PARAMETERS = new Object[0];
 
     private final String basename;

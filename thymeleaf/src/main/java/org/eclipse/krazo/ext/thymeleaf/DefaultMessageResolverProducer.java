@@ -50,7 +50,7 @@ public class DefaultMessageResolverProducer {
     public IMessageResolver createMessageResolver() {
         final String basename = Optional.ofNullable(mvcContext.getConfig().getProperty("org.eclipse.krazo.thymeleaf.messages.basename"))
             .map(String::valueOf)
-            .orElse("messages");
+            .orElse(DefaultMessageResolver.DEFAULT_BASENAME);
 
         return new DefaultMessageResolver(basename);
     }
