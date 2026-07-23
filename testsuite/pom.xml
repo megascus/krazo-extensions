@@ -140,6 +140,13 @@
 			<artifactId>thymeleaf</artifactId>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- Krazo Thymeleaf extension for ThymeleafProperties in test code -->
+		<dependency>
+			<groupId>org.eclipse.krazo.ext</groupId>
+			<artifactId>krazo-thymeleaf</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>

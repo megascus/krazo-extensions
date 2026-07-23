@@ -41,14 +41,14 @@ public class DefaultMessageResolverProducer {
     /**
      * Produces the default DefaultMessageResolver.
      * The basename can be customized via the MVC configuration property
-     * "org.eclipse.krazo.thymeleaf.messages.basename". Defaults to "messages".
+     * {@link ThymeleafProperties#MESSAGES_BASENAME}. Defaults to {@link DefaultMessageResolver#DEFAULT_BASENAME}.
      *
      * @return a {@link DefaultMessageResolver} configured with the appropriate basename
      */
     @Produces
     @ViewEngineConfig
     public IMessageResolver createMessageResolver() {
-        final String basename = Optional.ofNullable(mvcContext.getConfig().getProperty("org.eclipse.krazo.thymeleaf.messages.basename"))
+        final String basename = Optional.ofNullable(mvcContext.getConfig().getProperty(ThymeleafProperties.MESSAGES_BASENAME))
             .map(String::valueOf)
             .orElse(DefaultMessageResolver.DEFAULT_BASENAME);
 

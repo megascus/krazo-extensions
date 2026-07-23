@@ -16,27 +16,21 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.eclipse.krazo.test.ext.thymeleaf.custombasename;
+package org.eclipse.krazo.ext.thymeleaf;
 
-import jakarta.ws.rs.ApplicationPath;
-import jakarta.ws.rs.core.Application;
-import org.eclipse.krazo.ext.thymeleaf.ThymeleafProperties;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.eclipse.krazo.Properties;
 
 /**
- * Application with custom message basename configuration.
+ * Application-level properties used to configure the Thymeleaf view engine extension.
+ * Extends {@link org.eclipse.krazo.Properties} to inherit core Krazo properties.
  *
  * @author Satoshi Seto
  */
-@ApplicationPath("thymeleaf/custom-basename")
-public class CustomBasenameApplication extends Application {
+public interface ThymeleafProperties extends Properties {
 
-    @Override
-    public Map<String, Object> getProperties() {
-        final Map<String, Object> map = new HashMap<>();
-        map.put(ThymeleafProperties.MESSAGES_BASENAME, "custom-messages");
-        return map;
-    }
+    /**
+     * String property that determines the base name of resource bundle message files to be used in
+     * {@link DefaultMessageResolver}.
+     */
+    String MESSAGES_BASENAME = "org.eclipse.krazo.thymeleaf.messages.basename";
 }
